@@ -11,6 +11,89 @@
   <link rel="preload" href="https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Regular.woff2" as="font" crossorigin>
   <link rel="preload" href="https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Bold.woff2" as="font" crossorigin>
   <title>Nucleus Design System</title>
+  <style id="temp-styles">
+    @font-face {
+      font-family: 'BG Flame Regular';
+      font-display: fallback;
+      src:
+        url('https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Regular.woff2') format('woff2'),
+        url('https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Regular.woff') format('woff');
+    }
+
+    body {
+      margin: 0;
+      font-family: 'BG Flame Regular',sans-serif;
+      color: #333f48;
+      font-size: 16px;
+      background: #fff;
+      overflow-x: hidden;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    ns-header {
+      display: block;
+      height: 4.5em;
+    }
+
+    ns-panel,
+    ns-landmark {
+      display: grid;
+      grid-template-columns: 5% 1fr 5%;
+    }
+
+    ns-landmark > * {
+      display: grid;
+      width: 100%;
+      justify-self: self-start;
+      max-width: 1600px;
+      grid-column-start: 2;
+      grid-column-end: -2;
+      grid-column-gap: 0;
+      grid-row-gap: 0
+    }
+
+    ns-panel > * {
+      display: grid;
+      width: 100%;
+      justify-self: center;
+      max-width: 1600px;
+      grid-column-start: 2;
+      grid-column-end: -2;
+      grid-column-gap: 1.42383rem;
+      grid-row-gap: 1.42383rem;
+    }
+
+    .h1,
+    h1 {
+      font-size: 2.02728653em;
+    }
+
+    .h5,
+    h5 {
+      font-size: 1.19324269rem;
+      margin-bottom: .9rem;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    p {
+      display: block;
+      max-width: 32em;
+    }
+
+    [slot="heading"] {
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body class="ndsn">
   <ns-header hide-links></ns-header>
@@ -83,7 +166,14 @@
       </div>
     </ns-panel>
   </main>
-  <ns-footer id="footer" cookie="https://www.britishgas.co.uk/global-maintenance/cookies-policy.html" privacy="https://www.britishgas.co.uk/privacy-policy.html" terms="https://www.britishgas.co.uk/terms-and-conditions.html"></ns-footer>
-  <script src="https://www.britishgas.co.uk/nucleus/nucleus.min.js"></script>
+ <ns-footer id="footer" cookie="https://www.britishgas.co.uk/global-maintenance/cookies-policy.html" privacy="https://www.britishgas.co.uk/privacy-policy.html" terms="https://www.britishgas.co.uk/terms-and-conditions.html"></ns-footer>
+  <script>
+    function removeTempStyles() {
+      document.getElementById('temp-styles').remove();
+
+    }
+  </script>
+  <script src="https://www.britishgas.co.uk/nucleus/nucleus.min.js" onload="removeTempStyles()";></script>
+
 </body>
 </html>
