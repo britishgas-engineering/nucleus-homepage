@@ -11,6 +11,17 @@
   <link rel="preload" href="https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Regular.woff2" as="font" crossorigin>
   <link rel="preload" href="https://www.britishgas.co.uk/nucleus/fonts/BGFlameWeb-Bold.woff2" as="font" crossorigin>
   <title>Nucleus Design System</title>
+  <style>
+    .landmark-br {
+      display: none;
+    }
+
+    @media (min-width: 480px) {
+      .landmark-br {
+        display: inline;
+      }
+    }
+  </style>
 </head>
 <body class="ndsn">
   <ns-header hide-links></ns-header>
@@ -19,7 +30,7 @@
       <h1 slot="heading">
         <span class="h5">Nucleus team.</span>
         <span class="h1 enlighten">
-          Welcome to the <b>British Gas Design System</b>
+          Welcome to the <b>British Gas<br class="landmark-br"> Design System</b>
         </span>
       </h1>
       <p slot="paragraph">Here to solve and build a more cohesive and coherent web experience for the British Gas brand.</p>
